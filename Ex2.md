@@ -30,7 +30,7 @@ insert into manager values(7788,'Vikash',4000,0,48000,'12-Aug-82','clerk',50,'Bo
 ### Q1) Update all the records of manager table by increasing 10% of their salary as bonus.
 
 ### QUERY:
-```
+```sql
 update manager set salary=salary+(salary*10/100);
 ```
 ### OUTPUT:
@@ -40,7 +40,7 @@ update manager set salary=salary+(salary*10/100);
 
 
 ### QUERY:
-```
+```sql
 delete from manager where salary <2750;
 ```
 ### OUTPUT:
@@ -50,7 +50,7 @@ delete from manager where salary <2750;
 
 
 ### QUERY:
- ```
+ ```sql
 select ename as "NAME" ,salary*12 as"ANNUAL SALARY" from manager;
 ```
 ### OUTPUT:
@@ -60,7 +60,7 @@ select ename as "NAME" ,salary*12 as"ANNUAL SALARY" from manager;
 
 
 ### QUERY:
-```
+```sql
 select ename from manager where designation='clerk';
 ```
 ### OUTPUT:
@@ -71,7 +71,7 @@ select ename from manager where designation='clerk';
 
 
 ### QUERY:
-```
+```sql
 select ename from manager where designation !='manager';
 ```
 ### OUTPUT:
@@ -82,7 +82,7 @@ select ename from manager where designation !='manager';
 
 
 ### QUERY:
-```
+```sql
 select ename from manager where commission =0;
 ```
 ### OUTPUT:
@@ -93,7 +93,7 @@ select ename from manager where commission =0;
 
 
 ### QUERY:
-```
+```sql
 select ename from manager where ename like 's%' or ename like '%s';
 ```
 ### OUTPUT:
@@ -104,7 +104,7 @@ select ename from manager where ename like 's%' or ename like '%s';
 
 
 ### QUERY:
-```
+```sql
 select ename,designation,deptno,hiredate from manager order by hiredate asc;
 ```
 ### OUTPUT:
@@ -115,7 +115,7 @@ select ename,designation,deptno,hiredate from manager order by hiredate asc;
 
 
 ### QUERY:
-```
+```sql
 select * from manager where hiredate < to_date('1981-09-30','yyyy-mm-dd');
 ```
 ### OUTPUT:
@@ -126,7 +126,7 @@ select * from manager where hiredate < to_date('1981-09-30','yyyy-mm-dd');
 
 
 ### QUERY:
-```
+```sql
 select ename,deptno,salary from manager order by deptno asc;
 select ename,deptno,salary from manager order by deptno desc;
 ```
@@ -138,7 +138,7 @@ select ename,deptno,salary from manager order by deptno desc;
 
 
 ### QUERY:
-```
+```sql
 SELECT ename FROM manager WHERE deptno NOT IN (10,30,40);
 ```
 ### OUTPUT:
@@ -147,7 +147,7 @@ SELECT ename FROM manager WHERE deptno NOT IN (10,30,40);
 ### Q13) Find number of rows in the table EMP
 
 ### QUERY:
-```
+```sql
 select count(*) from manager;
 ```
 ### OUTPUT:
@@ -157,7 +157,7 @@ select count(*) from manager;
 ### Q14) Find maximum, minimum and average salary in EMP table.
 
 ### QUERY:
-```
+```sql
 select ename,salary,annualsalary from manager where salary=(select max(salary) from manager);
 select ename,salary,annualsalary from manager where salary=(select min(salary) from manager);
 select avg(salary) from manager;
@@ -169,7 +169,7 @@ select avg(salary) from manager;
 ### Q15) List the jobs and number of employees in each job. The result should be in the descending order of the number of employees.
 
 ### QUERY:
-```
+```sql
 SELECT designation, count(*) AS "Number of Employees" FROM manager GROUP BY designation ORDER BY count(*) DESC;
 ```
 ### OUTPUT:
